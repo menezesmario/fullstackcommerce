@@ -1,7 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 function NavBar() {
+    const router = useRouter()
+    const isActive = (r) => {
+        if(r === router.pathname){
+        return "active"
+        } else {
+        return ""
+
+        }
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link href="/">
@@ -13,14 +23,14 @@ function NavBar() {
 
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav">
-                <li className="nav-item active">
+                <li className="nav-item ">
                     <Link href="/cart">
-                        <a className="nav-link"><i className="fas fa-shopping-cart"></i></a>
+                        <a className={"nav-link" + isActive('/cart')}><i className="fas fa-shopping-cart" aria-hidden="true"></i> Cart</a>
                     </Link>
                 </li>
-                <li className="nav-item active">
+                <li className="nav-item ">
                     <Link href="/signin">
-                        <a className="nav-link"><i className="fas fa-user"></i>Entrar</a>
+                        <a className={"nav-link" + isActive('/signin')}><i className="fas fa-user" aria-hidden="true"></i> Entrar</a>
                     </Link>
                 </li>
                 </ul>
