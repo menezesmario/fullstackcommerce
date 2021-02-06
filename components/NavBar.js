@@ -6,7 +6,7 @@ function NavBar() {
     const router = useRouter()
     const isActive = (r) => {
         if(r === router.pathname){
-        return "active"
+        return " active"
         } else {
         return ""
 
