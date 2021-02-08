@@ -19,8 +19,6 @@ const Signin =() => {
 
     const handleSubmit = async e => {
         e.preventDefault()
-        
-
         dispatch({ type: 'NOTIFY', payload: { loading: true} })
 
         const res = await postData('auth/register', userData)
