@@ -31,7 +31,7 @@ const login = async (req, res) => {
         res.json({
             msg: "Login Success!",
         refresh_token,
-        access_token
+        access_token,
         user: {
             name: user.name,
             email: user.email,
